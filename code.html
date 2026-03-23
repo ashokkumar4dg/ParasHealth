@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book an Appointment | Paras Health</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .glass-effect {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .tonal-shift {
+            background: linear-gradient(135deg, #f7f9fb 0%, #f2f4f6 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "background": "#f7f9fb",
+                "on-secondary-fixed-variant": "#004f4f",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed": "#380c00",
+                "secondary-fixed": "#8cf3f3",
+                "inverse-primary": "#a9c7ff",
+                "primary-fixed": "#d6e3ff",
+                "on-secondary-container": "#007070",
+                "on-surface": "#191c1e",
+                "primary-container": "#005eb8",
+                "surface-dim": "#d8dadc",
+                "on-error": "#ffffff",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#a53d12",
+                "surface-tint": "#005db6",
+                "outline-variant": "#c2c6d4",
+                "on-primary-fixed-variant": "#00468c",
+                "surface": "#f7f9fb",
+                "surface-bright": "#f7f9fb",
+                "inverse-surface": "#2d3133",
+                "surface-container-highest": "#e0e3e5",
+                "secondary": "#006a6a",
+                "inverse-on-surface": "#eff1f3",
+                "on-secondary": "#ffffff",
+                "tertiary-fixed": "#ffdbcf",
+                "primary": "#00478d",
+                "on-surface-variant": "#424752",
+                "surface-container-high": "#e6e8ea",
+                "on-primary-container": "#c8daff",
+                "surface-variant": "#e0e3e5",
+                "on-secondary-fixed": "#002020",
+                "on-primary": "#ffffff",
+                "surface-container": "#eceef0",
+                "on-tertiary-container": "#ffcfbf",
+                "primary-fixed-dim": "#a9c7ff",
+                "secondary-container": "#8cf3f3",
+                "outline": "#727783",
+                "error": "#ba1a1a",
+                "on-background": "#191c1e",
+                "on-error-container": "#93000a",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed": "#001b3d",
+                "tertiary": "#832800",
+                "surface-container-low": "#f2f4f6",
+                "secondary-fixed-dim": "#6fd7d6",
+                "tertiary-fixed-dim": "#ffb59c",
+                "on-tertiary-fixed-variant": "#822800"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "2xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-background font-body text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-8 h-20 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-black tracking-tighter text-blue-800 dark:text-blue-300 font-headline">Paras Health</div>
+<div class="hidden md:flex items-center gap-8 font-plus-jakarta-sans text-sm font-semibold tracking-tight">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Find a Doctor</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Services</a>
+<a class="text-blue-700 dark:text-blue-400 border-b-2 border-blue-700 pb-1" href="#">Book Appointment</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-colors" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-5 py-2 text-sm font-bold text-blue-800 hover:bg-blue-50/50 transition-all rounded-lg">Login</button>
+<button class="px-5 py-2 text-sm font-bold bg-primary text-white rounded-lg shadow-md hover:opacity-90 transition-transform active:scale-95">Emergency</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<header class="mb-12">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-4">Book Your Consultation</h1>
+<p class="text-on-surface-variant text-lg max-w-2xl">Skip the queue and schedule your visit in four simple steps. Your health, our priority.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+<!-- Left Column: Form Steps -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Stepper Visual -->
+<div class="flex justify-between items-center px-2 mb-10 overflow-x-auto gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">1</div>
+<span class="text-sm font-semibold text-primary">Location</span>
+</div>
+<div class="h-[2px] flex-grow bg-outline-variant/30 min-w-[20px]"></div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold">2</div>
+<span class="text-sm font-semibold text-on-surface-variant">Speciality</span>
+</div>
+<div class="h-[2px] flex-grow bg-outline-variant/30 min-w-[20px]"></div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold">3</div>
+<span class="text-sm font-semibold text-on-surface-variant">Doctor</span>
+</div>
+<div class="h-[2px] flex-grow bg-outline-variant/30 min-w-[20px]"></div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant font-bold">4</div>
+<span class="text-sm font-semibold text-on-surface-variant">Schedule</span>
+</div>
+</div>
+<!-- Step 1: Select Hospital -->
+<section class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
+<h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">local_hospital</span> Select Hospital Location
+                    </h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Active Card -->
+<button class="flex items-center gap-4 p-5 rounded-xl border-2 border-primary bg-primary/5 text-left transition-all group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-white">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Paras Health, Gurgaon</h4>
+<p class="text-xs text-on-surface-variant">C-1, Sushant Lok Phase I, Sector 43</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-5 rounded-xl border border-outline-variant/30 bg-white hover:border-primary/50 text-left transition-all">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Paras Health, Patna</h4>
+<p class="text-xs text-on-surface-variant">NH-30, Bailey Rd, Raja Bazar</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-5 rounded-xl border border-outline-variant/30 bg-white hover:border-primary/50 text-left transition-all">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Paras Health, Udaipur</h4>
+<p class="text-xs text-on-surface-variant">JK Tyres Compound, Hiran Magri</p>
+</div>
+</button>
+<button class="flex items-center gap-4 p-5 rounded-xl border border-outline-variant/30 bg-white hover:border-primary/50 text-left transition-all">
+<div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Paras Health, Panchkula</h4>
+<p class="text-xs text-on-surface-variant">Plot No. 1, Sector 22</p>
+</div>
+</button>
+</div>
+</section>
+<!-- Step 3: Doctor Selection (Previewing complex UI) -->
+<section class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-end mb-6">
+<h2 class="font-headline text-2xl font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">stethoscope</span> Recommended Doctors
+                        </h2>
+<button class="text-sm font-semibold text-primary hover:underline">View All</button>
+</div>
+<div class="space-y-4">
+<article class="flex flex-col md:flex-row gap-6 p-6 rounded-xl border border-outline-variant/20 hover:shadow-md transition-shadow bg-surface-container-lowest">
+<div class="relative w-24 h-24 md:w-32 md:h-32 shrink-0">
+<img alt="Doctor Portrait" class="w-full h-full object-cover rounded-xl" data-alt="Professional portrait of a male doctor in clinical attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADmkcX2Y1Os981XlAYfjvMKb9lkn2rjxx_9y64C7mGT-wLBegqnx179NAzoCw70eryer85b_s_UxTQkyut40ReSFKnoZBCqLGJVzSmMNS2VV3RePdmZUi3K572cPbAx-4VSOLPV0VSrU4mqX35JJQGUp65eImH6NDjirswiTDdU-34lAg7ZxKVYx59GdTXTyCzio1B6NofCGjdvmBO2HVibGTq-f42PC8050Uh68jd7mD1k0MSCd88lwu01MgcQyEa9uipMtVYMP0"/>
+<div class="absolute -bottom-2 -right-2 bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider shadow-sm">Available</div>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-bold text-on-surface">Dr. Rajesh Khanna</h3>
+<p class="text-primary font-semibold text-sm">Senior Consultant - Cardiology</p>
+</div>
+<div class="flex items-center bg-secondary-container/30 px-2 py-1 rounded-lg">
+<span class="material-symbols-outlined text-sm text-secondary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-sm font-bold ml-1 text-on-secondary-container">4.9</span>
+<span class="text-xs text-outline ml-1">(120+)</span>
+</div>
+</div>
+<p class="mt-3 text-sm text-on-surface-variant leading-relaxed">Expert in interventional cardiology with 15+ years of experience in complex angioplasty and heart valve treatments.</p>
+<div class="mt-4 flex flex-wrap gap-2">
+<span class="text-[11px] font-bold px-3 py-1 bg-surface-container rounded-full text-on-surface-variant">MBBS, MD (Medicine)</span>
+<span class="text-[11px] font-bold px-3 py-1 bg-surface-container rounded-full text-on-surface-variant">DM (Cardiology)</span>
+<span class="text-[11px] font-bold px-3 py-1 bg-surface-container rounded-full text-on-surface-variant">English, Hindi</span>
+</div>
+</div>
+<div class="shrink-0 flex md:flex-col justify-end gap-3">
+<button class="px-6 py-2.5 bg-primary text-white font-bold rounded-lg text-sm shadow-sm hover:scale-[1.02] transition-transform">Select</button>
+<button class="px-6 py-2.5 bg-surface-container text-on-surface-variant font-bold rounded-lg text-sm hover:bg-surface-container-high transition-colors">Profile</button>
+</div>
+</article>
+</div>
+</section>
+<!-- Step 4: Schedule -->
+<section class="bg-surface-container-lowest p-8 rounded-2xl shadow-sm border border-outline-variant/10">
+<h2 class="font-headline text-2xl font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">calendar_month</span> Choose Date &amp; Time
+                    </h2>
+<div class="flex gap-4 overflow-x-auto pb-4 mb-8 snap-x">
+<button class="flex flex-col items-center justify-center min-w-[80px] h-24 rounded-2xl border-2 border-primary bg-primary/5 snap-start">
+<span class="text-xs font-bold text-primary/70 uppercase">Oct</span>
+<span class="text-2xl font-black text-primary">24</span>
+<span class="text-[10px] font-bold text-primary">Thursday</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[80px] h-24 rounded-2xl border border-outline-variant/30 bg-white hover:border-primary/40 snap-start">
+<span class="text-xs font-bold text-on-surface-variant/70 uppercase">Oct</span>
+<span class="text-2xl font-black text-on-surface">25</span>
+<span class="text-[10px] font-bold text-on-surface-variant">Friday</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[80px] h-24 rounded-2xl border border-outline-variant/30 bg-white hover:border-primary/40 snap-start">
+<span class="text-xs font-bold text-on-surface-variant/70 uppercase">Oct</span>
+<span class="text-2xl font-black text-on-surface">26</span>
+<span class="text-[10px] font-bold text-on-surface-variant">Saturday</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[80px] h-24 rounded-2xl border border-outline-variant/30 bg-white opacity-50 cursor-not-allowed snap-start">
+<span class="text-xs font-bold text-on-surface-variant/70 uppercase">Oct</span>
+<span class="text-2xl font-black text-on-surface">27</span>
+<span class="text-[10px] font-bold text-on-surface-variant">Sunday</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[80px] h-24 rounded-2xl border border-outline-variant/30 bg-white hover:border-primary/40 snap-start">
+<span class="text-xs font-bold text-on-surface-variant/70 uppercase">Oct</span>
+<span class="text-2xl font-black text-on-surface">28</span>
+<span class="text-[10px] font-bold text-on-surface-variant">Monday</span>
+</button>
+</div>
+<h4 class="text-sm font-bold text-on-surface-variant uppercase tracking-widest mb-4">Available Slots</h4>
+<div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
+<button class="py-3 rounded-lg border border-outline-variant/30 text-sm font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">09:00 AM</button>
+<button class="py-3 rounded-lg border border-outline-variant/30 text-sm font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">09:30 AM</button>
+<button class="py-3 rounded-lg border-2 border-primary bg-primary text-white text-sm font-bold">10:00 AM</button>
+<button class="py-3 rounded-lg border border-outline-variant/30 text-sm font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">10:30 AM</button>
+<button class="py-3 rounded-lg border border-outline-variant/30 text-sm font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">11:00 AM</button>
+<button class="py-3 rounded-lg bg-surface-container text-on-surface-variant opacity-40 cursor-not-allowed text-sm font-bold">11:30 AM</button>
+<button class="py-3 rounded-lg border border-outline-variant/30 text-sm font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">02:00 PM</button>
+<button class="py-3 rounded-lg border border-outline-variant/30 text-sm font-bold hover:bg-primary hover:text-white hover:border-primary transition-all">02:30 PM</button>
+</div>
+</section>
+</div>
+<!-- Right Column: Summary Card -->
+<div class="lg:col-span-4">
+<div class="sticky top-28 space-y-6">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl shadow-primary/5 border border-outline-variant/20 overflow-hidden">
+<div class="bg-primary p-6 text-white">
+<h3 class="font-headline text-xl font-bold">Appointment Summary</h3>
+<p class="text-on-primary-container text-xs mt-1">Please review your consultation details</p>
+</div>
+<div class="p-6 space-y-6">
+<!-- Detail Item -->
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">location_on</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">Location</p>
+<p class="text-sm font-bold">Paras Health, Gurgaon</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">person</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">Doctor</p>
+<p class="text-sm font-bold">Dr. Rajesh Khanna</p>
+<p class="text-xs text-on-surface-variant">Senior Cardiologist</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">event</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-on-surface-variant uppercase">Date &amp; Time</p>
+<p class="text-sm font-bold">Thursday, 24 Oct 2024</p>
+<p class="text-xs text-on-surface-variant">Slot: 10:00 AM</p>
+</div>
+</div>
+<div class="pt-6 border-t border-outline-variant/20">
+<div class="flex justify-between items-center mb-2">
+<span class="text-sm text-on-surface-variant">Consultation Fee</span>
+<span class="text-sm font-bold">₹1,200</span>
+</div>
+<div class="flex justify-between items-center mb-6">
+<span class="text-sm text-on-surface-variant">Booking Charge</span>
+<span class="text-sm font-bold">₹0</span>
+</div>
+<div class="flex justify-between items-center text-lg font-bold text-primary">
+<span>Total Payable</span>
+<span>₹1,200</span>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-white font-black text-base rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-95 transition-all">Book Now</button>
+<p class="text-[10px] text-center text-on-surface-variant px-4">By clicking 'Book Now' you agree to our Terms of Service and Patient Privacy Policy.</p>
+</div>
+</div>
+<!-- Trust Badge -->
+<div class="flex items-center gap-3 p-4 bg-secondary/5 rounded-xl border border-secondary/20">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<div>
+<p class="text-xs font-bold text-on-secondary-container">NABH Accredited Facility</p>
+<p class="text-[10px] text-on-secondary-container/80">Premium Care &amp; Patient Safety Guaranteed</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 w-full border-t border-slate-200 dark:border-slate-800">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-16 max-w-screen-2xl mx-auto font-inter text-sm leading-relaxed">
+<div class="space-y-4">
+<div class="text-xl font-bold text-blue-900 dark:text-blue-200">Paras Health</div>
+<p class="text-slate-500 dark:text-slate-400">Leading the way in medical excellence with advanced technology and compassionate care.</p>
+</div>
+<div>
+<h4 class="font-bold text-blue-800 dark:text-blue-300 mb-6">Patient Care</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">Emergency: 1066</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">Health Checkups</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">Patient Portal</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-800 dark:text-blue-300 mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">Our Locations</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">Careers</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-300 transition-opacity" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-blue-800 dark:text-blue-300 mb-6">Subscribe</h4>
+<div class="flex gap-2">
+<input class="bg-white border border-slate-200 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Email Address" type="text"/>
+<button class="bg-blue-800 text-white px-4 py-2 rounded-lg"><span class="material-symbols-outlined text-sm">send</span></button>
+</div>
+</div>
+</div>
+<div class="px-8 py-6 border-t border-slate-200 dark:border-slate-800 max-w-screen-2xl mx-auto text-center text-slate-500 text-xs">
+            © 2024 Paras Health. All Rights Reserved. NABH Accredited.
+        </div>
+</footer>
+</body></html>
